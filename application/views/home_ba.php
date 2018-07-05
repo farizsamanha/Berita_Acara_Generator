@@ -199,8 +199,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <button type="button" id="btn-tambah" onclick="alert('tambah')">Tambah</button>
-    <button type="button" id="btn-kurang" onclick="alert('kurang')">Kurang</button>
+    <button type="button" id="btn-tambah" onclick="tambah()">Tambah</button>
+    <button type="button" id="btn-kurang" onclick="kurang()">Kurang</button>
   </div>
 </div>
 
@@ -216,17 +216,20 @@
 </fieldset>
 </form>
 </div>
+
+<script>
+    function tambah() {
+      alert("tambah");
+    }
+
+    function kurang() {
+      alert("kurang");
+    }
+</script>
+
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
- <script>
-    function ta_display(x) {
-        if (x==0) {
-            document.getElementById('ta1').style.display='block';
-        else
-            document.getElementById('ta1').style.display='none';
-        }
-    }
- </script> 
+
 </body>
 </html>
