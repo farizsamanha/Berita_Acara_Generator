@@ -17,7 +17,7 @@
 
 <body>
  <div class="container">
-    <form class="well form-horizontal" action="<?php echo base_url().'index.php/c_ba/printhasil'?>" method="post"  id="ba_form">
+    <form class="well form-horizontal" action="<?php echo base_url().'index.php/c_ba/addBa'?>" method="post"  id="ba_form">
     <fieldset>
 
 <!-- Form Name -->
@@ -142,6 +142,24 @@
 </div>
 
 <div class="form-group">
+  <label class="col-md-4 control-label">Lokasi asal</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input  name="lokasi-asal" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Lokasi tujuan</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input  name="lokasi-tujuan" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
   <label class="col-md-4 control-label"><h4>Input Barang</h4></label>
   <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
@@ -185,7 +203,7 @@
     <button type="button" id="btn-kurang" onclick="alert('kurang')">Kurang</button>
   </div>
 </div>
-<!-- class="btn btn-warning" -->
+
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
@@ -198,11 +216,6 @@
 </fieldset>
 </form>
 </div>
-
-
-
-
-
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
