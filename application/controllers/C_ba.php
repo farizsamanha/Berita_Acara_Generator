@@ -18,8 +18,8 @@ class C_ba extends CI_Controller {
         $htmlFile = "http://www.cnn.com"; 
 		$buffer = file_get_contents($htmlFile); 
 		$html2pdf->pdf->AddPage(); 
-		$html2pdf->pdf->WriteHTML($buffer); 
-		$html2pdf->Output('my.pdf', 'F');
+		$html2pdf->pdf->WriteHTML('mantap'); 
+		$html2pdf->output('my.pdf');
 	}
 
 	public function addBa(){
