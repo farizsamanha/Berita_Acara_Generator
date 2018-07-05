@@ -16,7 +16,7 @@ class C_ba extends CI_Controller {
 	public function printhasil(){
 		$html2pdf = new Html2Pdf();
 		$html2pdf->writeHTML('<h1>HelloWorld</h1>This is my first test');
-		$html2pdf->output();
+		$html2pdf->output('maman.pdf');
 	}
 
 	public function addBa(){
