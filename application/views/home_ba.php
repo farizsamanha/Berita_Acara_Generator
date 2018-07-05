@@ -143,7 +143,7 @@
   <label class="col-md-4 control-label"></label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="custom-area" class="form-control" id="custom-text-area" type="text" style="display: none">
+  <textarea  name="custom-area" class="form-control" id="custom-text-area" style="display: none;resize: none;"></textarea>
     </div> 
   </div>
 </div>
