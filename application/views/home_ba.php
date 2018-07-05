@@ -121,6 +121,21 @@
 
 <input  name="keterangan2" class="form-control" value="2" type="hidden">
 
+<div class="form-group"> 
+  <label class="col-md-4 control-label">Statement</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+    <select name="statement" class="form-control selectpicker" >
+      <option value=" " >--Please select your statement--</option>
+      <option>Barang masuk</option>
+      <option>Barang keluar</option>
+      <option >Custom</option>
+    </select>
+  </div>
+</div>
+</div>
+
+<!--
 <div class="form-group">
   <label class="col-md-4 control-label">Statement</label>
     <div class="col-md-4">
@@ -135,10 +150,13 @@
     </div>
   </div>
 </div>
-
-
+-->
 
 <div class="form-group">
+  <label class="col-md-4 control-label"></label>
+    <div class="col-md-4">
+      <textarea rows="4" cols="50">Input your text here...</textarea>
+    <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
     <button type="submit" class="btn btn-warning" > Submit <span class="glyphicon glyphicon-send"></span></button>
