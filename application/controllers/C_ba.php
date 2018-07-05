@@ -26,10 +26,19 @@ class C_ba extends CI_Controller {
 			'jabatan' => $this->input->post('jabatan'),
 			'keterangan' => $this->input->post('keterangan1'),
 		);
+
+		$data3 = array(
+			'nama' => $this->input->post('nama2'),
+			'nik' => $this->input->post('nik2'),
+			'jabatan' => $this->input->post('jabatan2'),
+			'keterangan' => $this->input->post('keterangan2'),
+		);
+
 		$table2 = 'pegawai';
 
 		$this->Model_ba->tambah($table,$data);
 		$this->Model_ba->tambah2($table2,$data2);
+		$this->Model_ba->tambah2($table2,$data3);
 
 	}
 

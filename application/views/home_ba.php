@@ -21,7 +21,8 @@
     <fieldset>
 
 <!-- Form Name -->
-<legend>Form Berita Acara</legend>
+<h3 style="text-align: center;">Form Berita Acara</h3>
+<br>
 
 <div class="form-group">
   <label class="col-md-4 control-label">Judul Berita Acara</label>  
@@ -83,6 +84,43 @@
 </div>
 
 <input  name="keterangan1" class="form-control" value="1" type="hidden">
+
+<!-- ----------------------pihak 2---------------------------- -->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Pihak 2</label>  
+ 
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Nama</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input  name="nama2" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">NIK</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input  name="nik2" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Jabatan</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input  name="jabatan2" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<input  name="keterangan2" class="form-control" value="2" type="hidden">
+
 
 
 <div class="form-group">
