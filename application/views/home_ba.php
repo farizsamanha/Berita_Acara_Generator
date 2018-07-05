@@ -121,6 +121,21 @@
 
 <input  name="keterangan2" class="form-control" value="2" type="hidden">
 
+<div class="form-group">
+  <label class="col-md-4 control-label">Statement</label>
+    <div class="col-md-4">
+      <div class="radio">
+        <label><input type="radio" name="hosting" value="barang-asuk" /> Barang Masuk</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="hosting" value="baran-keluar" /> Barang Keluar</label>
+    </div>
+    <div class="radio">
+        <label><input type="radio" name="hosting" value="custom" /> custom</label>
+    </div>
+  </div>
+</div>
+
 
 
 <div class="form-group">
