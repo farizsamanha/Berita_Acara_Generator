@@ -161,7 +161,7 @@
 
 <div class="form-group">
   <label class="col-md-4 control-label">Tipe</label>  
-  <div class="col-md-4 inputGroupContainer">
+  <div class="col-md-4 inputGroupContainer">  
   <div class="input-group">
   <input  name="tipe" class="form-control"  type="text">
     </div>
@@ -178,16 +178,20 @@
 </div>
 </div>
 
-
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="button" id="btn-tambah" onclick="alert('tambah')">Tambah</button>
+    <button type="button" id="btn-kurang" onclick="alert('kurang')">Kurang</button>
+  </div>
+</div>
+<!-- class="btn btn-warning" -->
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
     <button type="submit" class="btn btn-warning" >Submit <span class="glyphicon glyphicon-send"></span></button>
   </div>
 </div>
-
-
-
 
 <br>
 
