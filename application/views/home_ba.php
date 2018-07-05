@@ -82,6 +82,8 @@
   </div>
 </div>
 
+<input  name="keterangan1" class="form-control" value="1" type="hidden">
+
 
 <div class="form-group">
   <label class="col-md-4 control-label"></label>

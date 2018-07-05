@@ -24,6 +24,7 @@ class C_ba extends CI_Controller {
 			'nama' => $this->input->post('nama'),
 			'nik' => $this->input->post('nik'),
 			'jabatan' => $this->input->post('jabatan'),
+			'keterangan' => $this->input->post('keterangan1'),
 		);
 		$table2 = 'pegawai';
 
