@@ -12,6 +12,10 @@ class C_ba extends CI_Controller {
 		$this->load->view('home_ba');
 	}
 
+	public function printhasil(){
+		
+	}
+
 	public function addBa(){
 	    $data = array(
 			'judul' => $this->input->post('judul'),
