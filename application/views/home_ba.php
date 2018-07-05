@@ -134,37 +134,69 @@
 </div>
 </div>
 
-<!--
-<div class="form-group">
-  <label class="col-md-4 control-label">Statement</label>
-    <div class="col-md-4">
-      <div class="radio">
-        <label><input type="radio" name="hosting" value="barang-asuk" /> Barang Masuk</label>
-      </div>
-      <div class="radio">
-        <label><input type="radio" name="hosting" value="baran-keluar" /> Barang Keluar</label>
-    </div>
-    <div class="radio">
-        <label><input type="radio" name="hosting" value="custom" /> custom</label>
-    </div>
-  </div>
-</div>
--->
-
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
     <div class="col-md-4">
       <textarea rows="4" cols="50">Input your text here...</textarea>
-    <div class="form-group">
-  <label class="col-md-4 control-label"></label>
-  <div class="col-md-4">
-    <button type="submit" class="btn btn-warning" > Submit <span class="glyphicon glyphicon-send"></span></button>
+ </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label"><h4>Input Barang</h4></label>
+  <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+    </div>
   </div>
 </div>
+
+<div class="barang-container">
+<div class="form-group">
+  <label class="col-md-4 control-label">Serial Number</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input  name="id-barang" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Tipe</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input  name="tipe" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Keterangan</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input  name="keterangan" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning" >Submit <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+
+
+
+<br>
 
 </fieldset>
 </form>
 </div>
+
+
+
 
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
