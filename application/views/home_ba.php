@@ -11,9 +11,14 @@
   <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
   <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
 
- <!--<link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">-->
-</head>
-<link rel="stylesheet" href='assets/css/style.css'>
+  <link rel="stylesheet" href='assets/css/style.css'>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+  </head>
+
 
 <body>
  <div class="container">
@@ -139,7 +144,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <input  name="custom-area" class="form-control" id="custom-text-area" type="text" style="display: none">
-    </div>
+    </div> 
   </div>
 </div>
 
@@ -170,30 +175,30 @@
   </div>
 </div>
 
-<div class="barang-container">
-<div class="form-group">
+<div id="barang-container">
+<div class="form-group" id="sn">
   <label class="col-md-4 control-label">Serial Number</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="id-barang" class="form-control"  type="text">
+  <input  name="id-barang" class="form-control"  type="text" id="input-sn">
     </div>
   </div>
 </div>
 
-<div class="form-group">
+<div class="form-group" id="tipe">
   <label class="col-md-4 control-label">Tipe</label>  
   <div class="col-md-4 inputGroupContainer">  
   <div class="input-group">
-  <input  name="tipe" class="form-control"  type="text">
+  <input  name="tipe" class="form-control"  type="text" id="input-tipe">
     </div>
   </div>
 </div>
 
-<div class="form-group">
+<div class="form-group" id="keterangan">
   <label class="col-md-4 control-label">Keterangan</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="keterangan" class="form-control"  type="text">
+  <input  name="keterangan" class="form-control"  type="text" id="input-keterangan">
     </div>
   </div>
 </div>
@@ -202,7 +207,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <button type="button" class="btn btn-warning" id="btn-tambah" onclick="tambah()">Tambah</button>
+    <button type="button" class="btn btn-warning" id="btn-tambah">Tambah</button>
     <button type="button" class="btn btn-warning" id="btn-kurang" onclick="kuran()">Kurang</button>
   </div>
 </div>
@@ -221,10 +226,6 @@
 </div>
 
 <script>
-    function tambah() {
-      alert("tambah");
-    }
-
     function kurang() {
       alert("kurang");
     }
@@ -240,11 +241,18 @@
         textarea.style.display = "none";
     }
     }
+
+    $(document).ready(function(e){
+      var html1 = '<br><p><div><div id="barang-container"><div class="form-group" id="sn">  <label class="col-md-4 control-label">Serial Number</label>    <div class="col-md-4 inputGroupContainer">  <div class="input-group">  <input  name="id-barang" class="form-control"  type="text" id="child-input-sn"></div></div></div> <div class="form-group" id="tipe">  <label class="col-md-4 control-label">Tipe</label>    <div class="col-md-4 inputGroupContainer">    <div class="input-group">  <input  name="tipe" class="form-control"  type="text" id="child-input-tipe">    </div>  </div> </div><div class="form-group" id="keterangan"> <label class="col-md-4 control-label">Keterangan</label>    <div class="col-md-4 inputGroupContainer">  <div class="input-group">  <input  name="keterangan" class="form-control"  type="text" id="child-input-keterangan">    </div>  </div></div> </div></p>';
+      //add container
+      $("#btn-tambah").click(function(e){
+        //alert("berhasil");
+          $("#barang-container").append(html1);
+        });
+    });
 </script>
 
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+
 
 </body>
 </html>
