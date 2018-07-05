@@ -126,10 +126,9 @@
     <div class="col-md-4 selectContainer">
     <div class="input-group">
     <select name="statement" class="form-control selectpicker" >
-      <option value=" " >--Please select your statement--</option>
-      <option>Barang masuk</option>
-      <option>Barang keluar</option>
-      <option >Custom</option>
+      <option value="masuk">Barang masuk</option>
+      <option value="keluar">Barang keluar</option>
+      <option value="custom">Custom</option>
     </select>
   </div>
 </div>
