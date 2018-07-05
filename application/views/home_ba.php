@@ -125,7 +125,7 @@
   <label class="col-md-4 control-label">Statement</label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
-    <select name="statement" class="form-control selectpicker" >
+    <select name="statement" id="statement" class="form-control selectpicker" onchange="change()">
       <option value="masuk">Barang masuk</option>
       <option value="keluar">Barang keluar</option>
       <option value="custom">Custom</option>
@@ -135,11 +135,14 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label"></label>
-    <div class="col-md-4">
-      <textarea rows="4" cols="50">Input your text here...</textarea>
- </div>
+  <label class="col-md-4 control-label"></label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input  name="custom-area" class="form-control" id="custom-text-area" type="text" style="display: none">
+    </div>
+  </div>
 </div>
+
 
 <div class="form-group">
   <label class="col-md-4 control-label">Lokasi asal</label>  
@@ -207,7 +210,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <button type="submit" class="btn btn-warning" >Submit <span class="glyphicon glyphicon-send"></span></button>
+    <button type="submit" class="btn btn-warning" >Submit<span class="glyphicon glyphicon-send"></span></button>
   </div>
 </div>
 
@@ -224,6 +227,18 @@
 
     function kurang() {
       alert("kurang");
+    }
+
+    function change(){
+    var selectBox = document.getElementById("statement");
+    var selected = selectBox.options[selectBox.selectedIndex].value;
+    var textarea = document.getElementById("custom-text-area");
+    if(selected === 'custom'){
+        textarea.style.display = "block";
+    }
+    else{
+        textarea.style.display = "none";
+    }
     }
 </script>
 
