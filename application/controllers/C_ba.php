@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+use Spipu\Html2Pdf\Html2Pdf;
 
 class C_ba extends CI_Controller {
 
@@ -13,7 +14,9 @@ class C_ba extends CI_Controller {
 	}
 
 	public function printhasil(){
-		
+		$html2pdf = new Html2Pdf();
+		$html2pdf->writeHTML('<h1>HelloWorld</h1>This is my first test');
+		$html2pdf->output();
 	}
 
 	public function addBa(){
