@@ -199,8 +199,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <button type="button" id="btn-tambah" onclick="alert('tambah')">Tambah</button>
-    <button type="button" id="btn-kurang" onclick="alert('kurang')">Kurang</button>
+    <button type="button" class="btn btn-warning" id="btn-tambah" onclick="alert('tambah')">Tambah</button>
+    <button type="button" class="btn btn-warning" id="btn-kurang" onclick="alert('kurang')">Kurang</button>
   </div>
 </div>
 
