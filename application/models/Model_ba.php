@@ -7,6 +7,10 @@ class Model_ba extends CI_Model {
 		$this->db->insert($table,$data);
 	}
 
+	function tambah2($table2,$data2) {
+		$this->db->insert($table2,$data2);
+	}
+
 }
 
 /* End of file model_ba.php */

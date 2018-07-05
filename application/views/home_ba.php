@@ -50,6 +50,38 @@
   </div>
 </div>
 
+<div class="form-group">
+  <label class="col-md-4 control-label">Pihak 1</label>  
+ 
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Nama</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input  name="nama" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">NIK</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input  name="nik" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Jabatan</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input  name="jabatan" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
 
 <div class="form-group">
   <label class="col-md-4 control-label"></label>

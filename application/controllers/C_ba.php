@@ -20,10 +20,16 @@ class C_ba extends CI_Controller {
 		);
 		$table = 'berita';
 
-		$this->Model_ba->tambah($table,$data);
+		$data2 = array(
+			'nama' => $this->input->post('nama'),
+			'nik' => $this->input->post('nik'),
+			'jabatan' => $this->input->post('jabatan'),
+		);
+		$table2 = 'pegawai';
 
-		//print_r($data);
-		//$this->index();
+		$this->Model_ba->tambah($table,$data);
+		$this->Model_ba->tambah2($table2,$data2);
+
 	}
 
 }
