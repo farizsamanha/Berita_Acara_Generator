@@ -42,13 +42,12 @@ class C_ba extends CI_Controller {
 			'tanggal' => $this->input->post('tanggal'),
 			'lokasi' => $this->input->post('lokasi'),
 		);
-		
 
 		$data2 = array(
-			'nama' => $this->input->post('nama'),
-			'nik' => $this->input->post('nik'),
-			'jabatan' => $this->input->post('jabatan'),
-			'keterangan' => $this->input->post('keterangan1'),
+		'nama' => $this->input->post('nama'),
+		'nik' => $this->input->post('nik'),
+		'jabatan' => $this->input->post('jabatan'),
+		'keterangan' => $this->input->post('keterangan1'),
 		);
 
 		$data3 = array(
@@ -57,13 +56,18 @@ class C_ba extends CI_Controller {
 			'jabatan' => $this->input->post('jabatan2'),
 			'keterangan' => $this->input->post('keterangan2'),
 		);
+
     	
     	for($i=0;$i<count($arr_sn_barang);$i++){
 	    	$data_insert[] = array(
 	    		'serial_number' => $arr_sn_barang[$i],
-	    		'tipe' => $arr_tipe_barang[$i]
+	    		'tipe' => $arr_tipe_barang[$i],
+	    		'status' => $arr_tipe_keterangan[$i],
 	    	);
 	    }
+
+
+	
 
 		$this->Model_ba->tambah($table,$data);
 		$this->Model_ba->tambah2($table2,$data2);
@@ -72,5 +76,3 @@ class C_ba extends CI_Controller {
 	}
 }
 
-/* End of file controllername.php */
-/* Location: ./application/controllers/controllername.php */
