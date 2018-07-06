@@ -15,16 +15,9 @@ class Model_ba extends CI_Model {
 	{
 		$this->db->insert($table3,$data4);
 	}
-	function tambahtest($table,$data4)
+	function tambahtest($table3,$data4)
 	{
-		// for($x = 0; $x < sizeof($data); $x++ ){
-	 //    	$this->db->insert();
-	 //    	$this->db->insert($table,$data);
-	 //    }
-		// $arraytest = array();
-		foreach ($data4 as $key) {
-			$this->db->insert($table,$data4);
-		};
+		$this->db->insert_batch($table3,$data4);
 
 	}
 
