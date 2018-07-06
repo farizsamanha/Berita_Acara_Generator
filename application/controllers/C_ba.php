@@ -28,12 +28,26 @@ class C_ba extends CI_Controller {
 	}
 
 	public function addBa(){
+	    $table = 'berita';
+	    $table2 = 'pegawai';
+	    $table3 = 'barang';
+	    $arr_sn_barang = $this->input->post("sn_barang");
+	    $arr_tipe_barang = $this->input->post("tipe_barang");
+
+	  //  $this->Model_ba->tambahtest('barang',$arr_sn_barang);
+
+	 //    foreach ($arr_sn_barang as $key) {
+		// 	echo $key;
+		// };
+
+	    //$snbarang= $this->input->post("sn_barang");
+/*
 	    $data = array(
 			'judul' => $this->input->post('judul'),
 			'tanggal' => $this->input->post('tanggal'),
 			'lokasi' => $this->input->post('lokasi'),
 		);
-		$table = 'berita';
+		
 
 		$data2 = array(
 			'nama' => $this->input->post('nama'),
@@ -47,14 +61,32 @@ class C_ba extends CI_Controller {
 			'nik' => $this->input->post('nik2'),
 			'jabatan' => $this->input->post('jabatan2'),
 			'keterangan' => $this->input->post('keterangan2'),
+		);*/
+
+		$data4 = array(
+			'serial_number' => $arr_sn_barang,
+			//'tipe' => $this->input->post('tipe-barang'),
+			//'status' => $this->input->post('keterangan-barang'),
 		);
 
-		$table2 = 'pegawai';
-
-		$this->Model_ba->tambah($table,$data);
-		$this->Model_ba->tambah2($table2,$data2);
-		$this->Model_ba->tambah2($table2,$data3);
-
+		
+		/*foreach($arr_sn_barang as $key => $value){
+    		$for_sn_barang[] = $value;
+    	}
+    	
+    	print_r($for_sn_barang); 
+    	
+    	
+		//$this->Model_ba->tambah($table,$data);
+		//$this->Model_ba->tambah2($table2,$data2);
+		//$this->Model_ba->tambah2($table2,$data3);
+		//$this->Model_ba->tambah3($table3,$data4);*/
+		$this->Model_ba->tambahtest($table3,$data4);
+		
+		//foreach ($arr_sn_barang as $key) {
+		//	echo $key;
+		//}
+		
 	}
 
 }
