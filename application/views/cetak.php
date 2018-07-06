@@ -8,7 +8,8 @@
 			body{
 				margin: 20px 50px 10px 100px;
 			}
-			table{
+			table, th, td{
+				margin: 1px 1px 1px 1px;
 				border-collapse: collapse;
 			}
 			td{
@@ -38,7 +39,7 @@
 		</tr>
 		</table>
 
-		<table>
+		<table style="margin: 1px 1px 1px 1px;">
 			<tr>
 				<td style="font-weight: bold;">Pihak 1</td>
 			</tr>
