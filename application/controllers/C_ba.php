@@ -15,10 +15,15 @@ class C_ba extends CI_Controller {
 
 	public function printhasil(){
 		$html2pdf = new Html2Pdf('P', 'A4', 'en');
-        $htmlFile = "http://www.cnn.com"; 
-		$buffer = file_get_contents($htmlFile); 
+        $hasil = '
+        	<page>
+        		<div style="padding:4mm;" align="center">
+        			<h3>Berita Acara</h3>
+        		</div>
+        	</page>
+        ';
 		$html2pdf->pdf->AddPage(); 
-		$html2pdf->pdf->WriteHTML('mantap'); 
+		$html2pdf->pdf->WriteHTML($hasil); 
 		$html2pdf->output('my.pdf');
 	}
 
