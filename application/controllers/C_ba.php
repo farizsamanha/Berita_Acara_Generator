@@ -13,6 +13,20 @@ class C_ba extends CI_Controller {
 		$this->load->view('home_ba');
 	}
 
+	public function cetak(){
+		$this->load->view('cetak');
+	}
+
+	public function printhasil(){
+		$html2pdf = new Html2Pdf('P', 'A4', 'en');
+		$html2pdf->pdf->SetMargins(20, 5, 20);
+        $hasil = file_get_contents(base_url('index.php/C_ba/cetak'));
+		$html2pdf->pdf->AddPage(); 
+		$html2pdf->pdf->WriteHTML($hasil); 
+		$html2pdf->output('my.pdf');
+	
+	}
+
 
 	public function addBa(){
 	    $table = 'berita';
