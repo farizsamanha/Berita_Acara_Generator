@@ -75,7 +75,7 @@
   <label class="col-md-4 control-label">NIK</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="nik" class="form-control"  type="text" id="nik">[]
+  <input  name="nik" class="form-control"  type="text" id="nik">
     </div>
   </div>
 </div>
