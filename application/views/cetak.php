@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html>
-	<head>
+<page_header>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<title>Berita Acara</title>
 		<style type="text/css">
 			body{
@@ -20,15 +17,15 @@
 				height: 20%;
 			}
 		</style>
-	</head>
-	<body>
-		<table width="100%">
-			<tr>
-				<td align="center">Berita Acara</td>
-			</tr>
-			<tr>
-				<td align="center">Penyerahan Laptop Dell dari IT ke Fasup West</td>
-			</tr>
+</page_header>
+<body>
+<table width="100%" cellpadding="3">
+	<tr>
+		<td align="center">Berita Acara</td>
+	</tr>
+	<tr>
+		<td align="center">Penyerahan Laptop Dell dari IT ke Fasup West</td>
+	</tr>
 		</table>
 
 		<table>
