@@ -248,10 +248,7 @@
           data: 'nik='+nik,
        }).success(function(data){        
           var json = data;
-          alert(json);
           obj = JSON.parse(data); 
-          //document.getElementById('demo').innerHTML = obj.nama + obj.jabatan;
-          
           $("#nama").val(obj.nama);
           $("#jabatan").val(obj.jabatan);
        });

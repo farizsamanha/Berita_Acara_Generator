@@ -10,7 +10,6 @@ $getData = array(
 	);
 
 echo json_encode($getData);
-var_dump($getData);
 /* End of file autofill-ajax.php */
 /* Location: ./application/controllers/autofill-ajax.php */
 ?>
