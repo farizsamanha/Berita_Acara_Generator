@@ -38,10 +38,13 @@
 			</td>
 		</tr>
 		</table>
-
+		<br>
+		<br>
+		<br>
 		<table style="margin: 1px 1px 1px 1px;">
 			<tr>
 				<td style="font-weight: bold;">Pihak 1</td>
+				<td></td>
 			</tr>
 			<tr>
 				<td>Nama : </td>
@@ -57,6 +60,7 @@
 			</tr>
 			<tr>
 				<td style="font-weight: bold;">Pihak 2</td>
+				<td></td>
 			</tr>
 			<tr>
 				<td>Nama : </td>
@@ -72,6 +76,9 @@
 			</tr>
 
 		</table>
+		<br>
+		<br>
+		<br>
 
 		<table>
 			<tr>
@@ -80,6 +87,9 @@
 				</td>
 			</tr>
 		</table>
+		<br>
+		<br>
+		<br>
 
 		<table class="table2" align="center" >
 			<tr class="table2">
@@ -112,6 +122,9 @@
 			</tr>
 		</table>
 		<br>
+		<br>
+		<br>
+		
 		<table align="right">
 			<tr>
 				<td>
@@ -120,6 +133,10 @@
 			</tr>
 
 		</table>
+		<br>
+		<br>
+		<br>
+
 		<div class="w3-container">
 			<br>
 			<br>
