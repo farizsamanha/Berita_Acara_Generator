@@ -14,7 +14,21 @@ class C_ba extends CI_Controller {
 	}
 
 	public function cetak(){
-		$this->load->view('cetak');
+		$data['judul'] = 'Penyerahan Laptop Dell dari IT ke Fasup West';
+		$data['tanggal'] = '22-12-2000';
+		$data['lokasi'] = 'BSD City';
+		$data['nama'] = 'Rony F Ruzain ';
+		$data['nik'] = '81256';
+		$data['jabatan'] = 'SPV IT Operation Support Jabotabek';
+		$data['keterangan'] = 'Pihak 1';
+		$data['nama2'] = 'Hasnawita ';
+		$data['nik2'] = '71350';
+		$data['jabatan2'] = 'Supervisor Facilities Support Western Jabotabek';
+		$data['keterangan2'] = 'Pihak 2';
+		$data['statement'] = 'Dengan ini menyatakan “ telah dilakukan pengeluaran 16 unit Laptop Dell dari lokasi Office Telkomsel BSD ke Fasup West an Hasnawita”. Unit tersebut dengan rincian sebagai berikut.';
+		$data['lokasi_asal'] = 'BSD Siti';
+		$data['lokasi_tujuan'] = 'Siti BSD';
+		$this->load->view('cetak2', $data);
 	}
 
 	public function printhasil(){
@@ -24,7 +38,41 @@ class C_ba extends CI_Controller {
 		$html2pdf->pdf->AddPage(); 
 		$html2pdf->pdf->WriteHTML($hasil); 
 		$html2pdf->output('my.pdf');
-	
+	}
+
+	public function printdata(){
+		$data['judul'] = $this->input->post('judul');
+		$data['tanggal'] = $this->input->post('tanggal');
+		$data['lokasi'] = $this->input->post('lokasi');
+		$data['nama'] = $this->input->post('nama');
+		$data['nik'] = $this->input->post('nik');
+		$data['jabatan'] = $this->input->post('jabatan');
+		$data['keterangan'] = $this->input->post('keterangan1');
+		$data['nama2'] = $this->input->post('nama2');
+		$data['nik2'] = $this->input->post('nik2');
+		$data['jabatan2'] = $this->input->post('jabatan2');
+		$data['keterangan2'] = $this->input->post('keterangan2');
+		$data['statement'] = $this->input->post('statement');
+		$data['lokasi_asal'] = $this->input->post('lokasi_asal');
+		$data['lokasi_tujuan'] = $this->input->post('lokasi_tujuan');
+
+		// $datay = array();
+
+		// $arr_sn_barang = $this->input->post("sn_barang");
+	 //    $arr_tipe_barang = $this->input->post("tipe_barang");
+	 //    $arr_tipe_keterangan = $this->input->post("keterangan_barang");
+
+	 //    for($i=0;$i<count($arr_sn_barang);$i++){	    
+	 //   		$datay[] = $arrayName = array('' => , );
+	 //   		$datay['serial_number'] => $arr_sn_barang[$i],
+	 //   		$datay['tipe'] => $arr_tipe_barang[$i],
+  //   		$datay['status'] => $arr_tipe_keterangan[$i],	    
+	 //    }
+
+	    $this->load->view('cetak2',$data);
+
+
+
 	}
 
 

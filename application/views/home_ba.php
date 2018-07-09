@@ -154,7 +154,7 @@
   <label class="col-md-4 control-label">Lokasi asal</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="lokasi-asal" class="form-control"  type="text">
+  <input  name="lokasi_asal" class="form-control"  type="text">
     </div>
   </div>
 </div>
