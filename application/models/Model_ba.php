@@ -21,6 +21,12 @@ class Model_ba extends CI_Model {
 
 	}
 
+	function getNik($value='')
+	{
+		$test = $this->db->get_where('pegawai', $where);
+		return $test->result_array();
+	}
+
 }
 
 /* End of file model_ba.php */

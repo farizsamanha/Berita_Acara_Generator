@@ -66,16 +66,18 @@
   <label class="col-md-4 control-label">Nama</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="nama" class="form-control"  type="text">
+  <input  name="nama" class="form-control"  type="text" id="nama">
     </div>
   </div>
 </div>
+
+<p id="demo"></p>
 
 <div class="form-group">
   <label class="col-md-4 control-label">NIK</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="nik" class="form-control"  type="text" id="nik">
+  <input  name="nik" class="form-control"  type="text" id="nik" onkeyup="autofill()">
     </div>
   </div>
 </div>
@@ -84,7 +86,7 @@
   <label class="col-md-4 control-label">Jabatan</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="jabatan" class="form-control"  type="text">
+  <input  name="jabatan" class="form-control"  type="text" id="jabatan">
     </div>
   </div>
 </div>
@@ -239,6 +241,22 @@
     }
     }
 
+    function autofill() {
+       var  nik = $("#nik").val();
+       $.ajax({
+          url: '<?php echo base_url().'autofill-ajax.php'?>',
+          data: 'nik='+nik,
+       }).success(function(data){        
+          var json = data;
+          alert(json);
+          obj = JSON.parse(data); 
+          //document.getElementById('demo').innerHTML = obj.nama + obj.jabatan;
+          
+          $("#nama").val(obj.nama);
+          $("#jabatan").val(obj.jabatan);
+       });
+    }
+
     $(document).ready(function(e){
       var html1 = '</ p><div><button type="button" class="btn btn-warning" id="btn-kurang" style="position:relative; margin-left:60%;">Hapus</button> <div id="barang-container"><div class="form-group" id="sn">  <label class="col-md-4 control-label">Serial Number</label>    <div class="col-md-4 inputGroupContainer">  <div class="input-group">  <input  name="sn_barang[]" class="form-control"  type="text" id="child-input-sn">    </div>  </div></div> <div class="form-group" id="tipe">  <label class="col-md-4 control-label">Tipe</label>    <div class="col-md-4 inputGroupContainer">    <div class="input-group">  <input  name="tipe_barang[]" class="form-control"  type="text" id="child-input-tipe">    </div>  </div></div>  <div class="form-group" id="keterangan">   <label class="col-md-4 control-label">Keterangan</label>    <div class="col-md-4 inputGroupContainer">  <div class="input-group">  <input  name="keterangan_barang[]" class="form-control"  type="text" id="child-input-keterangan"> </div> </div> </div> </div>';
 
@@ -263,6 +281,8 @@
         $(this).val($("#input-keterangan").val());
       });
     });
+
+
 
 </script>
 
