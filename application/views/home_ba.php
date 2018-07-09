@@ -131,7 +131,7 @@
   <label class="col-md-4 control-label">Statement</label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
-    <select name="statement" id="statement" class="form-control selectpicker" onchange="change_output()">
+    <select name="statement" id="statement" class="form-control selectpicker" onchange="">
       <option value="1">Barang masuk</option>
       <option value="2">Barang keluar</option>
       <option value="3">Custom</option>
@@ -146,7 +146,7 @@
   <label class="col-md-4 control-label"></label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <textarea  name="output" class="form-control" id="output" rows="4" cols="50" style="resize: none" disabled>test</textarea>
+  <textarea  name="output" class="form-control" id="output" rows="4" cols="50" style="resize: none" ></textarea>
     </div> 
   </div>
 </div>
@@ -255,11 +255,11 @@
       var terpilih = pilihan.options[pilihan.selectedIndex].value;
       var luaran = document.getElementById("output");
       if (terpilih === '1') {
-        luaran.innerHTML = "1";
+        luaran.innerHTML = "Dengan ini menyatakan “ telah dilakukan pemasukan ---- dari ----- ke ----”. Unit tersebut dengan rincian sebagai berikut.";
         luaran.disabled= true;
       }
       else if (terpilih === '2') {
-        luaran.innerHTML = "2";
+        luaran.innerHTML = "Dengan ini menyatakan “ telah dilakukan pengeluaran ---- dari ----- ke ----”. Unit tersebut dengan rincian sebagai berikut.";
         luaran.disabled= true;
       }
       else{
