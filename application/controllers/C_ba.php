@@ -31,17 +31,20 @@ class C_ba extends CI_Controller {
 		$this->load->view('cetak2', $data);
 	}
 
-	public function printpdf(){
+	public function printpdf($query){
 		$html2pdf = new Html2Pdf('P', 'A4', 'en');
 		$html2pdf->pdf->SetMargins(20, 5, 20);
-        $hasil = file_get_contents(base_url('index.php/C_ba/printdata'));
+        $hasil = file_get_contents(base_url('index.php/C_ba/printdata?'.$query));
+        $html2pdf->pdf->SetMargins(20, 5, 20);
+        $html2pdf->pdf->SetFont('Times', '', 10);
 		$html2pdf->pdf->AddPage(); 
 		$html2pdf->pdf->WriteHTML($hasil); 
+		$html2pdf->pdf->lastPage();
 		$html2pdf->output('my.pdf');
 	}
 
 	public function postdata(){
-		$data = array();
+		//$data = array();
 		$data['judul'] = $this->input->post('judul');
 		$data['tanggal'] = $this->input->post('tanggal');
 		$data['lokasi'] = $this->input->post('lokasi');
@@ -104,14 +107,16 @@ class C_ba extends CI_Controller {
 	    		'status' => $arr_tipe_keterangan[$i],	
 	    		);    
 	    }
-	    print_r($data);	    	    
-	    //$this->load->view('cetak2',$data);
+	    //print_r($data);	
+	    //$this->postdata();    	    
+	    $this->load->view('cetak2',$data);
 
 	}
 
 	public function result(){
-		$this->postdata();
-		$this->printdata();
+		$data = $this->postdata();
+		$query = http_build_query($data);
+		$this->printpdf($query);
 	}
 
 
