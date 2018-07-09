@@ -23,7 +23,7 @@
 
 <body>
  <div class="container">
-    <form class="well form-horizontal" action="<?php echo base_url().'index.php/c_ba/addBa'?>" method="post"  id="ba_form">
+    <form class="well form-horizontal" action="<?php echo base_url().'index.php/c_ba/result'?>" method="post"  id="ba_form">
     <fieldset>
 
 <!-- Form Name -->
