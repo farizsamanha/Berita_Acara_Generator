@@ -63,17 +63,6 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Nama</label>  
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <input  name="nama" class="form-control"  type="text" id="nama">
-    </div>
-  </div>
-</div>
-
-<p id="demo"></p>
-
-<div class="form-group">
   <label class="col-md-4 control-label">NIK</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
@@ -83,10 +72,19 @@
 </div>
 
 <div class="form-group">
+  <label class="col-md-4 control-label">Nama</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input  name="nama" class="form-control"  type="text" id="nama" disabled>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
   <label class="col-md-4 control-label">Jabatan</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="jabatan" class="form-control"  type="text" id="jabatan">
+  <input  name="jabatan" class="form-control"  type="text" id="jabatan" disabled>
     </div>
   </div>
 </div>
@@ -101,19 +99,19 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Nama</label>  
+  <label class="col-md-4 control-label">NIK</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="nama2" class="form-control"  type="text">
+  <input  name="nik2" class="form-control"  type="text" id="nik2" onkeyup="autofill2()">
     </div>
   </div>
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label">NIK</label>  
+  <label class="col-md-4 control-label">Nama</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="nik2" class="form-control"  type="text">
+  <input  name="nama2" class="form-control"  type="text" id="nama2" disabled>
     </div>
   </div>
 </div>
@@ -122,7 +120,7 @@
   <label class="col-md-4 control-label">Jabatan</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="jabatan2" class="form-control"  type="text">
+  <input  name="jabatan2" class="form-control"  type="text" id="jabatan2" disabled>
     </div>
   </div>
 </div>
@@ -253,6 +251,20 @@
           $("#jabatan").val(obj.jabatan);
        });
     }
+
+    function autofill2() {
+       var  nik = $("#nik2").val();
+       $.ajax({
+          url: '<?php echo base_url().'autofill-ajax.php'?>',
+          data: 'nik='+nik,
+       }).success(function(data){        
+          var json = data;
+          obj = JSON.parse(data); 
+          $("#nama2").val(obj.nama);
+          $("#jabatan2").val(obj.jabatan);
+       });
+    }
+
 
     $(document).ready(function(e){
       var html1 = '</ p><div><button type="button" class="btn btn-warning" id="btn-kurang" style="position:relative; margin-left:60%;">Hapus</button> <div id="barang-container"><div class="form-group" id="sn">  <label class="col-md-4 control-label">Serial Number</label>    <div class="col-md-4 inputGroupContainer">  <div class="input-group">  <input  name="sn_barang[]" class="form-control"  type="text" id="child-input-sn">    </div>  </div></div> <div class="form-group" id="tipe">  <label class="col-md-4 control-label">Tipe</label>    <div class="col-md-4 inputGroupContainer">    <div class="input-group">  <input  name="tipe_barang[]" class="form-control"  type="text" id="child-input-tipe">    </div>  </div></div>  <div class="form-group" id="keterangan">   <label class="col-md-4 control-label">Keterangan</label>    <div class="col-md-4 inputGroupContainer">  <div class="input-group">  <input  name="keterangan_barang[]" class="form-control"  type="text" id="child-input-keterangan"> </div> </div> </div> </div>';
