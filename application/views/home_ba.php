@@ -131,13 +131,24 @@
   <label class="col-md-4 control-label">Statement</label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
-    <select name="statement" id="statement" class="form-control selectpicker" onchange="change()">
-      <option value="masuk">Barang masuk</option>
-      <option value="keluar">Barang keluar</option>
-      <option value="custom">Custom</option>
+    <select name="statement" id="statement" class="form-control selectpicker" onchange="change_output()">
+      <option value="1">Barang masuk</option>
+      <option value="2">Barang keluar</option>
+      <option value="3">Custom</option>
     </select>
   </div>
 </div>
+</div>
+
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <textarea  name="output" class="form-control" id="output" rows="4" cols="50" style="resize: none" disabled>test</textarea>
+    </div> 
+  </div>
 </div>
 
 <div class="form-group">
@@ -237,6 +248,24 @@
     else{
         textarea.style.display = "none";
     }
+    }
+
+    function change_output() {
+      var pilihan = document.getElementById("statement");
+      var terpilih = pilihan.options[pilihan.selectedIndex].value;
+      var luaran = document.getElementById("output");
+      if (terpilih === '1') {
+        luaran.innerHTML = "1";
+        luaran.disabled= true;
+      }
+      else if (terpilih === '2') {
+        luaran.innerHTML = "2";
+        luaran.disabled= true;
+      }
+      else{
+        luaran.innerHTML = "3";
+        luaran.disabled= false;
+      } 
     }
 
     function autofill() {
