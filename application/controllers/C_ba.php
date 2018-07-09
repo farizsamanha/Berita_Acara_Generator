@@ -31,16 +31,20 @@ class C_ba extends CI_Controller {
 		$this->load->view('cetak2', $data);
 	}
 
-	public function printhasil(){
+	public function printpdf($query){
 		$html2pdf = new Html2Pdf('P', 'A4', 'en');
 		$html2pdf->pdf->SetMargins(20, 5, 20);
-        $hasil = file_get_contents(base_url('index.php/C_ba/cetak'));
+        $hasil = file_get_contents(base_url('index.php/C_ba/printdata?'.$query));
+        $html2pdf->pdf->SetMargins(20, 5, 20);
+        $html2pdf->pdf->SetFont('Times', '', 10);
 		$html2pdf->pdf->AddPage(); 
 		$html2pdf->pdf->WriteHTML($hasil); 
+		$html2pdf->pdf->lastPage();
 		$html2pdf->output('my.pdf');
 	}
 
-	public function printdata(){
+	public function postdata(){
+		//$data = array();
 		$data['judul'] = $this->input->post('judul');
 		$data['tanggal'] = $this->input->post('tanggal');
 		$data['lokasi'] = $this->input->post('lokasi');
@@ -56,23 +60,63 @@ class C_ba extends CI_Controller {
 		$data['lokasi_asal'] = $this->input->post('lokasi_asal');
 		$data['lokasi_tujuan'] = $this->input->post('lokasi_tujuan');
 
-		// $datay = array();
+		
 
-		// $arr_sn_barang = $this->input->post("sn_barang");
-	 //    $arr_tipe_barang = $this->input->post("tipe_barang");
-	 //    $arr_tipe_keterangan = $this->input->post("keterangan_barang");
+		$arr_sn_barang = $this->input->post("sn_barang");
+	    $arr_tipe_barang = $this->input->post("tipe_barang");
+	    $arr_tipe_keterangan = $this->input->post("keterangan_barang");
 
-	 //    for($i=0;$i<count($arr_sn_barang);$i++){	    
-	 //   		$datay[] = $arrayName = array('' => , );
-	 //   		$datay['serial_number'] => $arr_sn_barang[$i],
-	 //   		$datay['tipe'] => $arr_tipe_barang[$i],
-  //   		$datay['status'] => $arr_tipe_keterangan[$i],	    
-	 //    }
+	    for($i=0;$i<count($arr_sn_barang);$i++){	    
+	   		$data[] = array(
+		   		'serial_number' => $arr_sn_barang[$i],
+		   		'tipe' => $arr_tipe_barang[$i],
+	    		'status' => $arr_tipe_keterangan[$i],	
+	    		);    
+	    }
+	    //print_r($data);	
+	    return $data;
+	}
 
+	public function printdata(){
+		$data = array();
+		$data['judul'] = $this->input->get('judul');
+		$data['tanggal'] = $this->input->get('tanggal');
+		$data['lokasi'] = $this->input->get('lokasi');
+		$data['nama'] = $this->input->get('nama');
+		$data['nik'] = $this->input->get('nik');
+		$data['jabatan'] = $this->input->get('jabatan');
+		$data['keterangan'] = $this->input->get('keterangan1');
+		$data['nama2'] = $this->input->get('nama2');
+		$data['nik2'] = $this->input->get('nik2');
+		$data['jabatan2'] = $this->input->get('jabatan2');
+		$data['keterangan2'] = $this->input->get('keterangan2');
+		$data['statement'] = $this->input->get('statement');
+		$data['lokasi_asal'] = $this->input->get('lokasi_asal');
+		$data['lokasi_tujuan'] = $this->input->get('lokasi_tujuan');
+
+		
+
+		$arr_sn_barang = $this->input->get("sn_barang");
+	    $arr_tipe_barang = $this->input->get("tipe_barang");
+	    $arr_tipe_keterangan = $this->input->get("keterangan_barang");
+
+	    for($i=0;$i<count($arr_sn_barang);$i++){	    
+	   		$data[] = array(
+		   		'serial_number' => $arr_sn_barang[$i],
+		   		'tipe' => $arr_tipe_barang[$i],
+	    		'status' => $arr_tipe_keterangan[$i],	
+	    		);    
+	    }
+	    //print_r($data);	
+	    //$this->postdata();    	    
 	    $this->load->view('cetak2',$data);
 
+	}
 
-
+	public function result(){
+		$data = $this->postdata();
+		$query = http_build_query($data);
+		$this->printpdf($query);
 	}
 
 
