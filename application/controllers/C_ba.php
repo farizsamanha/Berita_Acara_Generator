@@ -6,7 +6,8 @@ class C_ba extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->load->model('Model_ba');			
+		$this->load->model('Model_ba');
+		$this->load->library('Dates');			
 	}
 
 	public function index(){
@@ -80,7 +81,7 @@ class C_ba extends CI_Controller {
 	public function printdata(){
 		$data = array();
 		$data['judul'] = $this->input->get('judul');
-		$data['tanggal'] = $this->input->get('tanggal');
+		$data['tanggal'] = $this->dates->change_format($this->input->get('tanggal'));
 		$data['lokasi'] = $this->input->get('lokasi');
 		$data['nama'] = $this->input->get('nama');
 		$data['nik'] = $this->input->get('nik');

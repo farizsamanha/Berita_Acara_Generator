@@ -103,6 +103,21 @@
 	<tr>
 		<td colspan="7">&nbsp;</td>
 	</tr>
+
+	<tr>
+		
+		<td colspan="2" style="text-align: center"></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td colspan="2" style="text-align: center;"><?=$lokasi?>, <?=$tanggal?></td>
+		
+	</tr>
+
+	<tr>
+		<td colspan="7">&nbsp;</td>
+	</tr>
+
 	<tr>
 		
 		<td colspan="2" style="text-align: center"><?=$jabatan?></td>
