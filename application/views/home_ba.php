@@ -75,7 +75,7 @@
   <label class="col-md-4 control-label">Nama</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="nama" class="form-control"  type="text" id="nama" disabled>
+  <input  name="nama" class="form-control"  type="text" id="nama" >
     </div>
   </div>
 </div>
@@ -84,7 +84,7 @@
   <label class="col-md-4 control-label">Jabatan</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="jabatan" class="form-control"  type="text" id="jabatan" disabled>
+  <input  name="jabatan" class="form-control"  type="text" id="jabatan" >
     </div>
   </div>
 </div>
@@ -111,7 +111,7 @@
   <label class="col-md-4 control-label">Nama</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="nama2" class="form-control"  type="text" id="nama2" disabled>
+  <input  name="nama2" class="form-control"  type="text" id="nama2" >
     </div>
   </div>
 </div>
@@ -120,7 +120,7 @@
   <label class="col-md-4 control-label">Jabatan</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input  name="jabatan2" class="form-control"  type="text" id="jabatan2" disabled>
+  <input  name="jabatan2" class="form-control"  type="text" id="jabatan2" >
     </div>
   </div>
 </div>

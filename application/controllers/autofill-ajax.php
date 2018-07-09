@@ -9,10 +9,6 @@ $getData = array(
 	'nama' => $rows['nama'],
 	'jabatan' => $rows['jabatan']
 	);
-//echo $rows['nama'];
-//echo print_r($rows);
-var_dump($getData);
-
 /* End of file autofill-ajax.php */
 /* Location: ./application/controllers/autofill-ajax.php */
 ?>
