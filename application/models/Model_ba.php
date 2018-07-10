@@ -3,22 +3,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model_ba extends CI_Model {
 
-	function tambah($table,$data) {
-		$this->db->insert($table,$data);
+	function insert($judul,$tanggal,$lokasi){
+		$data = array(
+			'judul' => $judul,
+			'tanggal' => $tanggal,
+			'lokasi' => $lokasi,
+		);
+		$this->db->insert('berita',$data);
 	}
 
-	function tambah2($table2,$data2) {
-		$this->db->insert($table2,$data2);
+	function insert2($nik,$nama,$jabatan){
+		$data = array(
+			'nik' => $nik,
+			'nama' => $nama,
+			'jabatan' => $jabatan,
+		);
+		$this->db->insert('pegawai',$data);
 	}
 
-	function tambah3($table3,$data4)
-	{
-		$this->db->insert($table3,$data4);
+	function insert3($nik2,$nama,$jabatan2){
+		$data = array(
+			'nik' => $nik2,
+			'nama' => $nama,
+			'jabatan' => $jabatan2,
+		);
+		$this->db->insert('pegawai',$data);
 	}
-	function tambahtest($table3,$data4)
-	{
-		$this->db->insert_batch($table3,$data4);
-
+	
+	function insert4($isi){
+		$this->db->insert_batch('barang',$isi);
 	}
 
 	function getNik($value='')
