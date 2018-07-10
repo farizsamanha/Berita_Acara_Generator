@@ -38,7 +38,7 @@ class C_ba extends CI_Controller {
 		$data['nik2'] = $this->input->post('nik2');
 		$data['jabatan2'] = $this->input->post('jabatan2');
 		$data['keterangan2'] = $this->input->post('keterangan2');
-		$data['statement'] = $this->input->post('statement');
+		$data['statement'] = $this->input->post('output');
 		$data['lokasi_asal'] = $this->input->post('lokasi_asal');
 		$data['lokasi_tujuan'] = $this->input->post('lokasi_tujuan');		
 
@@ -56,41 +56,6 @@ class C_ba extends CI_Controller {
 	    return $this->load->view('cetak2',$data,true);
 	}
 
-	public function printdata(){
-		var_dump($this->input->get());
-		$data = array();
-		$data['judul'] = $this->input->get('judul');
-		$data['tanggal'] = $this->dates->change_format($this->input->get('tanggal'));
-		$data['lokasi'] = $this->input->get('lokasi');
-		$data['nama'] = $this->input->get('nama');
-		$data['nik'] = $this->input->get('nik');
-		$data['jabatan'] = $this->input->get('jabatan');
-		$data['keterangan'] = $this->input->get('keterangan1');
-		$data['nama2'] = $this->input->get('nama2');
-		$data['nik2'] = $this->input->get('nik2');
-		$data['jabatan2'] = $this->input->get('jabatan2');
-		$data['keterangan2'] = $this->input->get('keterangan2');
-		$data['statement'] = $this->input->get('statement');
-		$data['lokasi_asal'] = $this->input->get('lokasi_asal');
-		$data['lokasi_tujuan'] = $this->input->get('lokasi_tujuan');
-
-		$arr_sn_barang = $this->input->get("sn_barang");
-	    $arr_tipe_barang = $this->input->get("tipe_barang");
-	    $arr_tipe_keterangan = $this->input->get("keterangan_barang");
-
-	    for($i=0;$i<count($arr_sn_barang);$i++){	    
-	   		$data[] = array(
-		   		'serial_number' => $arr_sn_barang[$i],
-		   		'tipe' => $arr_tipe_barang[$i],
-	    		'status' => $arr_tipe_keterangan[$i],	
-	    		);    
-	    }
-	        
-	    $this->load->view('cetak2',$data);
-		$data['isi'] = $this->input->get('isi'); 
-
-	}
-	
 	public function result(){
 		$data = $this->postdata();	
 		$this->printpdf($data);

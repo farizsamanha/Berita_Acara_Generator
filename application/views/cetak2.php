@@ -17,36 +17,38 @@
 	</tr>
 	<tr>
 		<td colspan="7" height="20">
-			Pada hari ini, Rabu tanggal 31 bulan Januari tahun 2018, yang bertanda tangan dibawah ini:
+			Pada hari ini, <?php $mydate=getdate(date("U")); echo "$mydate[weekday]";?> tanggal <?php $mydate=getdate(date("U")); echo "$mydate[mday]";?> bulan <?php $mydate=getdate(date("U")); echo "$mydate[month]";?> tahun <?php $mydate=getdate(date("U")); echo "$mydate[year]";?>, yang bertanda tangan dibawah ini:
 		</td>
 	</tr>
 	<tr>
 		<td colspan="7" height="10">&nbsp;</td>
 	</tr>
 	<tr>
-		
-		<td colspan="1">I. Nama/NIK</td>
+		<td colspan="1">I. </td>
+		<td colspan="1" >Nama/NIK</td>
 		<td colspan="5">: <?=$nama?>/<?=$nik?></td>
-		<td></td>
+		
 	</tr>
 	<tr>
-		<td colspan="1">   Jabatan</td>
+		<td colspan="1"></td>
+		<td colspan="1">Jabatan</td>
 		<td colspan="5">: <?=$jabatan?></td>
-		<td></td>
+		
 	</tr>
 	<tr>
 		<td colspan="7">&nbsp;</td>
 	</tr>
 	<tr>
-		
-		<td colspan="1">II. Nama/NIK</td>
+		<td colspan="1">II. </td>
+		<td colspan="1">Nama/NIK</td>
 		<td colspan="5">: <?=$nama2?>/<?=$nik2?></td>
-		<td></td>
+		
 	</tr>
 	<tr>
-		<td colspan="1">   Jabatan</td>
+		<td colspan="1"></td>
+		<td colspan="1">Jabatan</td>
 		<td colspan="5">: <?=$jabatan2?></td>
-		<td></td>
+		
 	</tr>
 	<tr>
 		<td></td>
@@ -56,7 +58,7 @@
 	</tr>
 	<tr>
 		<td colspan="7" height="10" style="text-align: justify; line-height: 1.5">
-			Dengan ini menyatakan “ telah dilakukan pengeluaran 16 unit Laptop Dell dari lokasi Office Telkomsel BSD ke Fasup West an Hasnawita”. Unit tersebut dengan rincian sebagai berikut.
+			<?=$statement?>
 		</td>
 	</tr>
 	<tr>
@@ -64,30 +66,32 @@
 		<td colspan="5">
 			<table align="center" border="1">
 			<tr>
-				<td>
+				<td style="width:50px; word-wrap:break-word; display:inline-block;">
 					No
 				</td>
 				<td>
 					Type/Laptop
 				</td>
-				<td>
+				<td style="width:120px; word-wrap:break-word; display:inline-block;">
 					Serial Number
 				</td>
 				<td>
 					Status Instalasi Aplikasi
 				</td>
 			</tr>
-			<?php foreach ($isi as $x) { ?>
+			<?php $no=1; foreach ($isi as $x)
+				
+			{ ?>
 			<tr>
 				
-				<td>
-					1
+				<td style="width:50px; word-wrap:break-word; display:inline-block;">
+					<?php echo $no++ ?>
 				</td>
-				<td>
+				<td >
+					<?= $x['tipe'] ?>		
+				</td>
+				<td style="width:120px; word-wrap:break-word; display:inline-block;">
 					<?= $x['serial_number'] ?>
-				</td>
-				<td>
-					<?= $x['tipe'] ?>
 				</td>
 				<td>
 					<?= $x['status'] ?>
@@ -114,7 +118,7 @@
 		<td></td>
 		<td></td>
 		<td></td>
-		<td colspan="2" style="text-align: center;"><?=$lokasi?>, <?=$tanggal?></td>
+		<td colspan="2" style="text-align: center;"><?=$lokasi?>, <?php $mydate=getdate(date("U")); echo "$mydate[weekday], $mydate[month] $mydate[mday], $mydate[year]";?></td>
 		
 	</tr>
 
