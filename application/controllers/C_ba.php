@@ -54,10 +54,10 @@ class C_ba extends CI_Controller {
 	    		);    
 	    }
 
-	    // $this->Model_ba->insert($data['judul'],$data['tanggal'],$data['lokasi']);
-	    // $this->Model_ba->insert2($data['nik'],$data['nama'],$data['jabatan']);
-	    // $this->Model_ba->insert3($data['nik2'],$data['nama2'],$data['jabatan2']);
-	    // $this->Model_ba->insert4($data['isi']);
+	    $this->Model_ba->insert($data['judul'],$data['tanggal'],$data['lokasi']);
+	    $this->Model_ba->insert2($data['nik'],$data['nama'],$data['jabatan']);
+	    $this->Model_ba->insert3($data['nik2'],$data['nama2'],$data['jabatan2']);
+	    $this->Model_ba->insert4($data['isi']);
 
 	    return $this->load->view('cetak2',$data,true);
 

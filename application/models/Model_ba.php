@@ -18,7 +18,7 @@ class Model_ba extends CI_Model {
 			'nama' => $nama,
 			'jabatan' => $jabatan,
 		);
-		$this->db->insert('pegawai',$data);
+		$this->db->replace('pegawai',$data);
 	}
 
 	function insert3($nik2,$nama,$jabatan2){
@@ -27,7 +27,7 @@ class Model_ba extends CI_Model {
 			'nama' => $nama,
 			'jabatan' => $jabatan2,
 		);
-		$this->db->insert('pegawai',$data);
+		$this->db->replace('pegawai',$data);
 	}
 	
 	function insert4($isi){
