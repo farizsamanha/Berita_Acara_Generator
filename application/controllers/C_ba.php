@@ -32,10 +32,11 @@ class C_ba extends CI_Controller {
 		$this->load->view('cetak2', $data);
 	}
 
-	public function printpdf($query){
+	public function printpdf($hasil){
+		//var_dump($query);
 		$html2pdf = new Html2Pdf('P', 'A4', 'en');
 		$html2pdf->pdf->SetMargins(20, 5, 20);
-        $hasil = file_get_contents(base_url('index.php/C_ba/printdata?'.$query));
+        //$hasil = file_get_contents(base_url('index.php/C_ba/printdata?'.$query));
         $html2pdf->pdf->SetMargins(20, 5, 20);
         $html2pdf->pdf->SetFont('Times', '', 10);
 		$html2pdf->pdf->AddPage(); 
@@ -45,7 +46,7 @@ class C_ba extends CI_Controller {
 	}
 
 	public function postdata(){
-		//$data = array();
+		$data = array();
 		$data['judul'] = $this->input->post('judul');
 		$data['tanggal'] = $this->input->post('tanggal');
 		$data['lokasi'] = $this->input->post('lokasi');
@@ -68,17 +69,19 @@ class C_ba extends CI_Controller {
 	    $arr_tipe_keterangan = $this->input->post("keterangan_barang");
 
 	    for($i=0;$i<count($arr_sn_barang);$i++){	    
-	   		$data[] = array(
+	   		$data['isi'][] = array(
 		   		'serial_number' => $arr_sn_barang[$i],
 		   		'tipe' => $arr_tipe_barang[$i],
 	    		'status' => $arr_tipe_keterangan[$i],	
 	    		);    
 	    }
-	    //print_r($data);	
-	    return $data;
+	    return $this->load->view('cetak2',$data,true);
 	}
 
-		public function printdata(){
+
+		
+	public function printdata(){
+		var_dump($this->input->get());
 		$data = array();
 		$data['judul'] = $this->input->get('judul');
 		$data['tanggal'] = $this->dates->change_format($this->input->get('tanggal'));
@@ -95,8 +98,6 @@ class C_ba extends CI_Controller {
 		$data['lokasi_asal'] = $this->input->get('lokasi_asal');
 		$data['lokasi_tujuan'] = $this->input->get('lokasi_tujuan');
 
-		
-
 		$arr_sn_barang = $this->input->get("sn_barang");
 	    $arr_tipe_barang = $this->input->get("tipe_barang");
 	    $arr_tipe_keterangan = $this->input->get("keterangan_barang");
@@ -111,13 +112,16 @@ class C_ba extends CI_Controller {
 	    //print_r($arr_sn_barang);	
 	    //$this->postdata();    	    
 	    $this->load->view('cetak2',$data);
+		$data['isi'] = $this->input->get('isi'); 
+		   	    
+	    //print_r($data['isi'][0]);
 
 	}
 
 	public function result(){
-		$data = $this->postdata();
-		$query = http_build_query($data);
-		$this->printpdf($query);
+		$data = $this->postdata();	
+		//$query = http_build_query($data);
+		$this->printpdf($data);
 	}
 
 

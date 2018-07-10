@@ -77,20 +77,24 @@
 					Status Instalasi Aplikasi
 				</td>
 			</tr>
+			<?php foreach ($isi as $x) { ?>
 			<tr>
+				
 				<td>
 					1
 				</td>
 				<td>
-					Lenovo
+					<?= $x['serial_number'] ?>
 				</td>
 				<td>
-					827267282292872
+					<?= $x['tipe'] ?>
 				</td>
 				<td>
-					Done
+					<?= $x['status'] ?>
 				</td>
+				
 			</tr>
+			<?php } ?> 
 		</table>
 		</td>
 		<td colspan="1"></td>
