@@ -78,7 +78,7 @@ class C_ba extends CI_Controller {
 	    return $data;
 	}
 
-	public function printdata(){
+		public function printdata(){
 		$data = array();
 		$data['judul'] = $this->input->get('judul');
 		$data['tanggal'] = $this->dates->change_format($this->input->get('tanggal'));
@@ -108,7 +108,7 @@ class C_ba extends CI_Controller {
 	    		'status' => $arr_tipe_keterangan[$i],	
 	    		);    
 	    }
-	    //print_r($data);	
+	    //print_r($arr_sn_barang);	
 	    //$this->postdata();    	    
 	    $this->load->view('cetak2',$data);
 
