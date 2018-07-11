@@ -38,9 +38,8 @@ class C_ba extends CI_Controller {
 		$data['nik2'] = $this->input->post('nik2');
 		$data['jabatan2'] = $this->input->post('jabatan2');
 		$data['keterangan2'] = $this->input->post('keterangan2');
-		$data['statement'] = $this->input->post('output');
-		$data['lokasi_asal'] = $this->input->post('lokasi_asal');
-		$data['lokasi_tujuan'] = $this->input->post('lokasi_tujuan');		
+		$data['kategori'] = $this->input->post('kategori');
+		$data['statement'] = $this->input->post('statement');	
 
 		$arr_sn_barang = $this->input->post("sn_barang");
 	    $arr_tipe_barang = $this->input->post("tipe_barang");
@@ -57,9 +56,11 @@ class C_ba extends CI_Controller {
 	}
 
 	public function masukdb($data){
-		$this->Model_ba->insert($data['judul'],$data['tanggal'],$data['lokasi']);
-	    $this->Model_ba->insert2($data['nik'],$data['nama'],$data['jabatan']);
-	    $this->Model_ba->insert3($data['nik2'],$data['nama2'],$data['jabatan2']);
+		$this->Model_ba->insert($data['judul'],$data['tanggal'],$data['lokasi'],$data['kategori'],$data['statement']);
+		//$insert_id = $this->Model_ba->input($table,$data);
+
+	    $this->Model_ba->insert2($data['nik'],$data['nama'],$data['jabatan'], $data['keterangan']);
+	    $this->Model_ba->insert3($data['nik2'],$data['nama2'],$data['jabatan2'], $data['keterangan2']);
 	    $this->Model_ba->insert4($data['isi']);
 
 	}
