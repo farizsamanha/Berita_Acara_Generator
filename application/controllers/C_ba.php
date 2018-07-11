@@ -53,6 +53,7 @@ class C_ba extends CI_Controller {
 	    		'status' => $arr_tipe_keterangan[$i],	
 	    		);    
 	    }
+	    //return $this->load->view('cetak2',$data,true);
 	    return $data;
 	}
 
