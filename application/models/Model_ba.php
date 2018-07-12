@@ -15,8 +15,9 @@ class Model_ba extends CI_Model {
 		return $this->db->insert_id();
 	}
 
-	function insert2($nik,$nama,$jabatan){
+	function insert2($insert_id,$nik,$nama,$jabatan,$keterangan){
 		$data = array(
+			'id_berita'=>$insert_id,
 			'nik' => $nik,
 			'nama' => $nama,
 			'jabatan' => $jabatan,
@@ -25,12 +26,13 @@ class Model_ba extends CI_Model {
 		$this->db->replace('pegawai',$data);
 	}
 
-	function insert3($nik2,$nama,$jabatan2){
+	function insert3($insert_id,$nik2,$nama,$jabatan2,$keterangan){
 		$data = array(
+			'id_berita'=>$insert_id,
 			'nik' => $nik2,
 			'nama' => $nama,
 			'jabatan' => $jabatan2,
-			'keterangan' => $keterangan2,
+			'keterangan' => $keterangan,
 		);
 		$this->db->replace('pegawai',$data);
 	}

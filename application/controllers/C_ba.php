@@ -39,38 +39,38 @@ class C_ba extends CI_Controller {
 		$data['jabatan2'] = $this->input->post('jabatan2');
 		$data['keterangan2'] = $this->input->post('keterangan2');
 		$data['kategori'] = $this->input->post('kategori');
-		$data['statement'] = $this->input->post('statement');	
+		$data['statement'] = $this->input->post('statement');		
 
+	    return $data;
+	}
+
+	public function postdata2(){
+		$data = $this->postdata();
+		
+		$insert_id = $this->Model_ba->insert($data['judul'],$data['tanggal'],$data['lokasi'],$data['kategori'],$data['statement']);
+	    $this->Model_ba->insert2($insert_id,$data['nik'],$data['nama'],$data['jabatan'], $data['keterangan']);
+	    $this->Model_ba->insert3($insert_id,$data['nik2'],$data['nama2'],$data['jabatan2'], $data['keterangan2']); 
+	
 		$arr_sn_barang = $this->input->post("sn_barang");
 	    $arr_tipe_barang = $this->input->post("tipe_barang");
-	    $arr_tipe_keterangan = $this->input->post("keterangan_barang");
+	    $arr_tipe_keterangan = $this->input->post("keterangan_barang");	
 
 	    for($i=0;$i<count($arr_sn_barang);$i++){	    
 	   		$data['isi'][] = array(
+	   			'id_berita' => $insert_id,
 	   			'tipe' => $arr_tipe_barang[$i],
 		   		'serial_number' => $arr_sn_barang[$i],
 	    		'status' => $arr_tipe_keterangan[$i],	
 	    		);    
 	    }
-	    //return $this->load->view('cetak2',$data,true);
+
+	    $this->Model_ba->insert4($data['isi']);
+
 	    return $data;
 	}
 
-	public function masukdb($data){
-		$this->Model_ba->insert($data['judul'],$data['tanggal'],$data['lokasi'],$data['kategori'],$data['statement']);
-		//$insert_id = $this->Model_ba->input($table,$data);
-
-	    $this->Model_ba->insert2($data['nik'],$data['nama'],$data['jabatan'], $data['keterangan']);
-	    $this->Model_ba->insert3($data['nik2'],$data['nama2'],$data['jabatan2'], $data['keterangan2']);
-	    $this->Model_ba->insert4($data['isi']);
-
-	}
-
 	public function result(){
-		$data = $this->postdata();
-		$this->masukdb($data);	
-		$view = $this->load->view('cetak2',$data,true);
-		$this->printpdf($view);
+		$this->printpdf($this->load->view('cetak2',$this->postdata2(),true));
 		
 	}
 }
